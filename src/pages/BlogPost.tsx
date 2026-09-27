@@ -17,7 +17,10 @@ import {
   setSocialImage,
 } from "../utils/headMeta";
 
-const AUTHOR = { "@type": "Person", name: "Njoh Simplice Junior" } as const;
+// References the site-wide Person node (index.html's JSON-LD graph) by @id
+// instead of restating a second, un-linked "Njoh Simplice Junior" entity —
+// keeps every page pointing at one consolidated author for E-E-A-T.
+const AUTHOR = { "@id": `${SITE_URL}/#person` } as const;
 
 /**
  * BlogPosting + (when the post has FAQ frontmatter) FAQPage JSON-LD, so the
@@ -38,6 +41,7 @@ function articleSchema(post: Post): string {
       image: `${SITE_URL}${post.coverImage}`,
       datePublished: post.date,
       dateModified: post.date,
+      keywords: post.tags.join(", "),
     },
   ];
 
