@@ -5,6 +5,15 @@
   "observability": { "enabled": true },
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "404-page"
+    "not_found_handling": "404-page",
+    // Every canonical URL, sitemap entry and JSON-LD `url` in this app is
+    // written without a trailing slash (scripts/prerender.mjs,
+    // scripts/generate-sitemap.mjs). The default ("auto-trailing-slash")
+    // 307-redirects those exact URLs to a trailing-slash variant whose own
+    // <link rel="canonical"> points back to the no-slash URL — a redirect/
+    // canonical loop that stopped pages from being indexed. This makes
+    // Cloudflare serve the no-slash URL directly and 307 the slash variant
+    // to it instead, matching what we actually declare everywhere.
+    "html_handling": "drop-trailing-slash"
   }
 }
