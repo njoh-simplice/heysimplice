@@ -185,26 +185,6 @@ turning a Search Console export into a prioritized fix list, or a keyword
 export into a brief a writer can use. Keep the data tools for the raw numbers.
 Use the skill for the judgment call that used to eat an afternoon.
 
-## FAQ
-
-### Do Claude skills replace tools like Semrush or Ahrefs?
-
-No. They replace the manual work of turning that data into a decision (an
-audit, a brief, or a page review), not the underlying keyword and ranking
-database itself.
-
-### Do I need a paid Claude plan to use skills?
-
-No. Skills are available on Free, Pro, Max, Team, and Enterprise Claude.ai
-plans, as well as Claude Code and the API. You do need to turn on code
-execution in your settings for skills to run.
-
-### Can someone without deep SEO experience use these?
-
-Yes, and that's a large part of the appeal. The skill carries the checklist
-and the methodology, so a beginner running it produces output structurally
-close to what a senior strategist would produce by hand.
-
 ## Final Takeaway
 
 Start with these three, in this order: technical audit, keyword research and

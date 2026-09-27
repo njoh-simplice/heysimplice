@@ -277,25 +277,6 @@ knowledge. I never use them for:
 
 The goal is leverage, not abdication.
 
-## FAQ
-
-### Do AI skills replace a human local SEO strategist?
-
-No. They accelerate the audit and page-building work; a human still reviews
-every output for local nuance and client context before it goes live.
-
-### Does FAQ schema still matter on local service pages?
-
-[FAQ rich results stopped appearing in Google Search in May 2026](https://developers.google.com/search/docs/appearance/structured-data/faqpage),
-but the markup is still valid and useful for structuring content that AI
-systems can extract. Keep it for that, not for a SERP dropdown.
-
-### How is a local SEO skill different from asking a chatbot for advice?
-
-A skill is a fixed procedure with defined inputs, decision logic, and a
-consistent output format, so the same audit run months apart on the same
-profile produces comparable results. A one-off chatbot answer doesn't.
-
 ## Final Thoughts
 
 Local SEO is still won by relevance, consistency, and trust signals. What's

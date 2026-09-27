@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import NotFound from "./NotFound";
+import { Accordion } from "../components/ui/Accordion";
 import {
   getPostBySlug,
   type BlogPost as Post,
@@ -113,6 +114,23 @@ export default function BlogPost() {
             {post.content}
           </ReactMarkdown>
         </div>
+
+        {post.faq.length > 0 && (
+          <div className="mt-12">
+            <h2 className="font-display text-2xl font-bold text-on-dark md:text-3xl">
+              FAQ
+            </h2>
+            <div className="mt-4">
+              <Accordion>
+                {post.faq.map((item) => (
+                  <Accordion.Item key={item.question} title={item.question}>
+                    {item.answer}
+                  </Accordion.Item>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        )}
 
         <script
           type="application/ld+json"
