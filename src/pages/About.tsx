@@ -55,23 +55,17 @@ const SERVICES = [
 ];
 
 /**
- * Structured data for this page. Escaping `<` keeps the JSON from being able
- * to close the surrounding <script> tag — belt and braces on static content.
+ * Structured data for this page: a ProfilePage whose subject is the site-wide
+ * Person node (declared once in index.html's graph, on every page). Pointing at
+ * it by @id rather than restating the person avoids a second, un-linked
+ * "Njoh Simplice Junior" entity. Escaping `<` keeps the JSON from being able to
+ * close the surrounding <script> tag.
  */
-const PERSON_SCHEMA = JSON.stringify({
+const PROFILE_SCHEMA = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Njoh Simplice Junior",
+  "@type": "ProfilePage",
   url: `${SITE_URL}/about`,
-  jobTitle: "Software Developer & WordPress/SEO Specialist",
-  email: "contact@nsdev.me",
-  telephone: "+237652025901",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Yaoundé",
-    addressCountry: "CM",
-  },
-  sameAs: [LINKEDIN_URL],
+  mainEntity: { "@id": `${SITE_URL}/#person` },
 }).replace(/</g, "\\u003c");
 
 /* ------------------------------------------------------------------ */
@@ -105,8 +99,8 @@ export default function About() {
             two years he has designed, built, and revamped websites for clients
             across France and Cameroon, taking projects from a Figma mockup to a
             live, working site in under two weeks. His most notable result:
-            growing a client&rsquo;s organic search from ~200 to nearly +200,000
-            monthly impressions and from ~7 to +2000 clics through SEO and Core
+            growing a client&rsquo;s organic search from ~200 to nearly 200,000
+            monthly impressions and from ~7 to 2,000+ clicks through SEO and Core
             Web Vitals optimization. He works remotely, communicates directly
             with clients throughout each project, and pairs technical execution
             with a focus on measurable outcomes.
@@ -190,7 +184,7 @@ export default function About() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: PERSON_SCHEMA }}
+          dangerouslySetInnerHTML={{ __html: PROFILE_SCHEMA }}
         />
       </article>
     </div>

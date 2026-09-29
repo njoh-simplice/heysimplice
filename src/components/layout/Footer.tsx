@@ -75,7 +75,7 @@ export default function Footer() {
           to="/legal-mentions"
           className="font-body text-xs lowercase text-on-light-muted transition-opacity hover:text-on-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-on-light"
         >
-          legal mentions
+          legal notice
         </Link>
         <SocialLinks variant="outline" />
       </div>

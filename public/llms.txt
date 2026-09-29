@@ -9,7 +9,7 @@
 - [Projects](https://nsdev.me/projects): Full list of delivered client projects (WordPress sites, web and mobile apps).
 - [Blog](https://nsdev.me/blog): Articles on web development, WordPress and SEO. Each post has its own page at https://nsdev.me/blog/{slug}.
 - [Contact](https://nsdev.me/contact): Contact details and an enquiry form.
-- [Legal Mentions](https://nsdev.me/legal-mentions): Site editor, hosting, intellectual property, personal data, cookies.
+- [Legal Notice](https://nsdev.me/legal-mentions): Site editor, hosting, intellectual property, personal data, cookies.
 
 ## Contact
 

@@ -27,7 +27,7 @@ export default function CookieConsent() {
             to="/legal-mentions"
             className="underline decoration-on-dark-muted/40 underline-offset-2 hover:text-on-dark"
           >
-            Legal Mentions
+            Legal Notice
           </Link>{" "}
           for details.
         </p>

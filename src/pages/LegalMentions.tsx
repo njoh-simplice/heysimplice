@@ -26,7 +26,7 @@ export default function LegalMentions() {
     <div className="bg-brand-black px-4 py-16 text-on-dark sm:px-8 md:py-24">
       <div className="mx-auto max-w-5xl text-center sm:text-left">
         <h1 className="font-display text-3xl font-bold md:text-4xl">
-          Legal Mentions
+          Legal Notice
         </h1>
         <p className="mt-2 font-body text-sm text-on-dark-muted">
           Last updated: {LAST_UPDATED}

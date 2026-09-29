@@ -35,9 +35,12 @@ export default function Hero() {
 
       {/* 1. Headline */}
       <h1 className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-display text-4xl font-bold leading-tight text-on-dark sm:text-5xl md:text-7xl xl:text-8xl">
-        <span className="font-script font-normal">Hey, I&rsquo;m</span>
-        <span>NJOH</span>
-        <HighlightText>SIMPLICE</HighlightText>
+        {/* The {" "} nodes give crawlers/AI extractors real word breaks
+            ("Hey, I'm NJOH SIMPLICE JUNIOR", not "I'mNJOHSIMPLICEJUNIOR").
+            Whitespace-only flex children aren't rendered, so the visual
+            spacing is still controlled by gap-x-3 alone. */}
+        <span className="font-script font-normal">Hey, I&rsquo;m</span>{" "}
+        <span>NJOH</span> <HighlightText>SIMPLICE</HighlightText>{" "}
         <span>JUNIOR</span>
       </h1>
 

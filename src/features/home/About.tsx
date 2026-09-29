@@ -58,8 +58,8 @@ export default function About() {
             I&rsquo;ve helped clients across France and Cameroon launch and
             revamp their online presence, from Figma mockup to live site,
             usually in under two weeks. My proudest win so far: taking a
-            client&rsquo;s organic traffic from ~200 to nearly +200,000 monthly
-            impressions and from ~7 to +2000 clics. I work remotely, communicate
+            client&rsquo;s organic traffic from ~200 to nearly 200,000 monthly
+            impressions and from ~7 to 2,000+ clicks. I work remotely, communicate
             clearly, and I&rsquo;m always looking for ways to make a project
             better before you even ask.
           </p>
