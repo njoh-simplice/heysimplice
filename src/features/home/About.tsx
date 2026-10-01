@@ -72,6 +72,12 @@ export default function About() {
             >
               Learn more about me &rarr;
             </Link>
+            <Link
+              to="/blog/top-3-claude-skills-for-seo"
+              className="mt-3 block font-body font-semibold text-on-light underline decoration-on-light-muted/40 underline-offset-4 hover:decoration-on-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-on-light md:mt-2"
+            >
+              Read: the top 3 Claude skills for SEO &rarr;
+            </Link>
           </div>
         </div>
 
