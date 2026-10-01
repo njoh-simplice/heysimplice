@@ -24,9 +24,14 @@ export function loadAnalytics(): void {
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer ?? [];
-  const gtag = (...args: unknown[]) => {
-    window.dataLayer?.push(args);
-  };
+  // Must push the `arguments` object, exactly like Google's snippet. gtag.js
+  // silently ignores plain arrays, so the previous `(...args) => push(args)`
+  // version loaded gtag.js but never sent a single hit (verified in Chrome:
+  // 0 requests to /g/collect, 1 as soon as `arguments` is pushed instead).
+  function gtag(..._args: unknown[]): void {
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer?.push(arguments);
+  }
   gtag("js", new Date());
   gtag("config", GA_MEASUREMENT_ID);
 }
