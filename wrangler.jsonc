@@ -3,6 +3,13 @@
   "name": "nsdev",
   "compatibility_date": "2026-09-07",
   "observability": { "enabled": true },
+  // nsdev.me is the only public address. It was attached as a Custom Domain in
+  // the dashboard; declaring it here makes the config the source of truth, so
+  // `wrangler deploy` keeps it attached instead of relying on dashboard state.
+  // workers_dev: false turns off the duplicate copy at
+  // nsdev.njohjunior4.workers.dev (it defaults to on when no routes exist).
+  "workers_dev": false,
+  "routes": [{ "pattern": "nsdev.me", "custom_domain": true }],
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page",
