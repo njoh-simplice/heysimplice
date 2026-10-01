@@ -26,9 +26,10 @@ These apply to every step below, without exception:
 - Never rewrite or delete a past entry in `rank-history.json`. Only append.
 - Never print or commit credentials or secrets, in any file, commit message, PR description, or log output.
 - A noindex change or a large structural change to a page is proposed for human approval — opened as a pull request with your reasoning in the description — never applied directly to `main`.
-- Every edit to an existing post is proposed as a pull request. Never commit directly to `main`.
+- Every edit to an existing post is proposed as a pull request. Never commit post or page edits directly to `main`.
+- Data files under `data/seo/` are the one exception: they are logs, not content. Never discard an update to them (the day's measurement, a review result). Leave them in the working tree — the scheduled workflow commits and pushes anything under `data/seo/` to `main` after every cycle, whatever the outcome. Don't commit them to a PR branch.
 - Never state that a change caused a ranking improvement as settled fact. Report what changed; let the next real measurement decide.
-- If nothing qualifies for improvement this cycle, change nothing — say so in the report and stop.
+- If nothing qualifies for improvement this cycle, change no page content — say so in the report and stop. The measurement appended in Step 1 still stands and is still persisted.
 - Never act on a rank number backed by fewer than the minimum impression threshold (`SEO_MIN_IMPRESSIONS`, default 10). Treat it as noise, not signal.
 - A keyword that has failed to improve past its retry cap (**3 unsuccessful cycles**) is flagged for human review, not retried automatically.
 - Check a candidate keyword against the site's own other pages for cannibalization before working on it.
@@ -55,7 +56,7 @@ For every keyword in `improvement-log.json` with `status: "observing"` and a `ne
 4. Increment this keyword's unsuccessful-cycle count if the result was "no real change." If it has now failed **3** times, stop retrying it automatically: set a `flaggedForReview: true` field and explain why in the report, instead of queuing it for more work.
 5. Note in the entry whether a known Google algorithm update fell inside this 7-day window, if you're aware of one. A broad update can move rankings independent of the edit — don't credit or blame the edit for movement that update explains.
 
-Commit the updated `improvement-log.json` and `rank-history.json` (a plain commit to a working branch is fine for data files — these are logs, not content edits, and don't need PR review the way a post edit does).
+Leave the updated `improvement-log.json` and `rank-history.json` in the working tree; the workflow persists `data/seo/` to `main` at the end of the cycle (see guardrails). They are logs, not content edits, and don't need PR review the way a post edit does.
 
 ## Step 3 — Choose one keyword for today
 
@@ -103,7 +104,7 @@ For an edit: once the PR is opened (not merged — the observing clock starts wh
 
 For a content brief: no `improvement-log.json` entry is needed — the brief itself, sitting in `content-briefs.json`, is the record.
 
-Commit the changed data files. A keyword marked `observing` is not touched again, for any reason, until its review date arrives — not even to re-measure it early out of curiosity.
+Leave the changed data files in the working tree for the workflow to persist (don't put them on the PR branch). A keyword marked `observing` is not touched again, for any reason, until its review date arrives — not even to re-measure it early out of curiosity.
 
 ## Reporting each cycle
 

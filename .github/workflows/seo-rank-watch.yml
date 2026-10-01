@@ -39,3 +39,44 @@ jobs:
             Run the seo-rank-watch skill now. Follow .claude/skills/seo-rank-watch/SKILL.md exactly,
             start to finish, for one full cycle. End with the cycle report described in that file.
           claude_args: '--allowedTools "Bash,Read,Write,Edit,Glob,Grep" --model claude-sonnet-5-5'
+
+      # Deterministic safety net: whatever the agent decided, any change it left
+      # under data/seo/ (the daily measurement, review results) lands on main.
+      # Without this, a cycle that ends in "nothing qualifies, stop" appended its
+      # measurement inside this throwaway runner and lost it (27-30 Sept 2026).
+      # always(): appended measurements are valid even if the agent step failed
+      # later in the cycle. Post edits still go through the agent's PRs.
+      - name: Persist SEO data logs to main
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # The agent may have left the checkout on a PR branch, with the day's
+          # data committed there (e.g. via `git commit -a`) or left uncommitted.
+          # Snapshot data/seo exactly as it stands, move to main, lay it back.
+          # Safe because rank-history.json is append-only: the snapshot always
+          # contains everything main had at checkout, plus this cycle's entries.
+          snap="$(mktemp -d)"
+          cp -R data/seo "$snap/"
+          git checkout -f main
+          cp -R "$snap/seo/." data/seo/
+          git add data/seo
+          git diff --cached --quiet || git commit -m "chore(seo): log rank-watch cycle $(date -u +%F)"
+
+          # Covers both the commit above and any data commit the agent made on
+          # main without pushing it.
+          git fetch origin main
+          if [ -z "$(git rev-list origin/main..main)" ]; then
+            echo "No data/seo changes to persist."
+            exit 0
+          fi
+          # Only ever auto-push logs. Page/post edits must go through a PR, so
+          # refuse (and fail the job visibly) if anything else is queued.
+          others="$(git diff --name-only origin/main..main | grep -v '^data/seo/' || true)"
+          if [ -n "$others" ]; then
+            echo "::error::Unpushed commits on main touch files outside data/seo/ — not pushing:"
+            echo "$others"
+            exit 1
+          fi
+          git pull --rebase origin main
+          git push origin main
