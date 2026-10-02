@@ -42,7 +42,7 @@
         "needs": "Post had no strong inbound internal links; the home page (strongest page) did not link to it.",
         "done": "Added one link to the post under 'Learn more about me' in src/features/home/About.tsx.",
         "pr": "https://github.com/njoh-simplice/nsdev/pull/17",
-        "prMergeStatus": "open, not yet confirmed merged; don't count impressions until merged",
+        "prMergeStatus": "merged 2026-10-01T15:23:23Z (confirmed via `gh pr view 17` on 2026-10-02). Impressions from this date forward count toward this action.",
         "revertPoint": "src/features/home/About.tsx at main ad5df7a",
         "algorithmUpdateInWindow": "none known",
         "nextLeverIfNoChange": "intro or title (missing_data/faq already partly present)"
