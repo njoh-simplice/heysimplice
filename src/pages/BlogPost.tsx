@@ -10,7 +10,7 @@ import {
 } from "../features/blog/lib/posts";
 import { formatPostDate } from "../features/blog/lib/formatDate";
 import { markdownComponents } from "../features/blog/markdownComponents";
-import { SITE_URL } from "../constants/pageMeta";
+import { SITE_URL, postDocumentTitle } from "../constants/pageMeta";
 import {
   setDescription,
   setKeywords,
@@ -72,7 +72,7 @@ export default function BlogPost() {
   // usePageMeta resets keywords / image / og:type when leaving for another route.
   useEffect(() => {
     if (!post) return;
-    document.title = `${post.title} | Njoh Simplice Junior`;
+    document.title = postDocumentTitle(post.title);
     setDescription(post.excerpt);
     setKeywords(post.tags.join(", "));
     setSocialImage(`${SITE_URL}${post.coverImage}`);

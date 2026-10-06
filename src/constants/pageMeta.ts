@@ -64,6 +64,20 @@ export const PAGE_META = {
 
 export type PageMetaKey = keyof typeof PAGE_META;
 
+const TITLE_SUFFIX = " | Njoh Simplice Junior";
+const MAX_TITLE_LENGTH = 70;
+
+/**
+ * `<title>` for a blog post. The brand suffix is only appended when the result
+ * stays within 70 characters (Bing flags longer titles as truncated); long
+ * post titles go out bare. Shared by prerender.mjs and BlogPost.tsx so the
+ * static and client-side titles can't drift apart.
+ */
+export function postDocumentTitle(postTitle: string): string {
+  const withSuffix = `${postTitle}${TITLE_SUFFIX}`;
+  return withSuffix.length <= MAX_TITLE_LENGTH ? withSuffix : postTitle;
+}
+
 /** Routes prerendered to static HTML at build time (see scripts/prerender.mjs). */
 export const PRERENDER_ROUTES = [
   "/",

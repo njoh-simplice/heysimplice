@@ -43,6 +43,7 @@ export {
   PAGE_META,
   PRERENDER_ROUTES,
   SITE_URL,
+  postDocumentTitle,
 } from "./constants/pageMeta";
 
 // Re-exported for scripts/prerender.mjs and scripts/generate-sitemap.mjs, which

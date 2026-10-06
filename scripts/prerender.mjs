@@ -50,8 +50,14 @@ if (!serverEntry) {
 }
 console.log(`using SSR entry ${serverEntry.slice(root.length + 1)}`);
 
-const { render, PAGE_META, PRERENDER_ROUTES, SITE_URL, getAllPosts } =
-  await import(pathToFileURL(serverEntry).href);
+const {
+  render,
+  PAGE_META,
+  PRERENDER_ROUTES,
+  SITE_URL,
+  getAllPosts,
+  postDocumentTitle,
+} = await import(pathToFileURL(serverEntry).href);
 
 /** Routes that get a file but should stay out of search results. */
 const NOINDEX_ROUTES = new Set(["/404"]);
@@ -147,7 +153,7 @@ const staticJobs = [...PRERENDER_ROUTES, "/404"].map((route) => {
 const blogJobs = getAllPosts().map((post) => ({
   route: `/blog/${post.slug}`,
   meta: {
-    title: `${post.title} | Njoh Simplice Junior`,
+    title: postDocumentTitle(post.title),
     description: post.excerpt,
     keywords: post.tags.join(", "),
     image: `${SITE_URL}${post.coverImage}`,
