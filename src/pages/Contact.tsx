@@ -7,6 +7,7 @@ import {
 import { Link } from "react-router-dom";
 import Button from "../components/ui/Button";
 import { usePageMeta } from "../hooks/usePageMeta";
+import { CONTACT_EMAIL } from "../constants/site";
 
 /* ------------------------------------------------------------------ */
 /* Section 1 — contact info cards                                     */
@@ -213,9 +214,9 @@ export default function Contact() {
           <ContactCard
             icon={MailIcon}
             label="Email"
-            value="contact@nsdev.me"
-            href="mailto:contact@nsdev.me"
-            ariaLabel="Email contact@nsdev.me"
+            value={CONTACT_EMAIL}
+            href={`mailto:${CONTACT_EMAIL}`}
+            ariaLabel={`Email ${CONTACT_EMAIL}`}
           />
         </div>
 

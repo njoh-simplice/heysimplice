@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Button from "../components/ui/Button";
 import { COOKIE_CONSENT_STORAGE_KEY } from "../hooks/useCookieConsent";
 import { usePageMeta } from "../hooks/usePageMeta";
+import { CONTACT_EMAIL } from "../constants/site";
 
 // Set by hand when the content below actually changes — not computed from
 // the visitor's clock, which would make "last updated" meaningless.
@@ -43,8 +44,8 @@ export default function LegalMentions() {
             </li>
             <li>Yaoundé, Cameroon</li>
             <li>
-              <a href="mailto:contact@nsdev.me" className={linkClass}>
-                contact@nsdev.me
+              <a href={`mailto:${CONTACT_EMAIL}`} className={linkClass}>
+                {CONTACT_EMAIL}
               </a>
             </li>
             <li>
@@ -111,8 +112,8 @@ export default function LegalMentions() {
           <p className="mt-3 font-body text-on-dark-muted">
             You can request access to, correction of, or deletion of your data
             at any time by emailing{" "}
-            <a href="mailto:contact@nsdev.me" className={linkClass}>
-              contact@nsdev.me
+            <a href={`mailto:${CONTACT_EMAIL}`} className={linkClass}>
+              {CONTACT_EMAIL}
             </a>
             .
           </p>

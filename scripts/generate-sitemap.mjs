@@ -6,14 +6,14 @@
  */
 process.env.NODE_ENV ??= "production";
 
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const serverEntry = join(root, "dist-ssr", "entry-server.js");
 
-const { SITE_URL, getAllPosts } = await import(
+const { SITE_URL, CONTACT_EMAIL, getAllPosts } = await import(
   pathToFileURL(serverEntry).href
 );
 
@@ -60,3 +60,19 @@ await writeFile(out, xml, "utf8");
 console.log(
   `sitemap ${STATIC_ENTRIES.length} static + ${postEntries.length} posts -> ${out.slice(root.length + 1)}`,
 );
+
+// public/robots.txt and public/llms.txt are copied verbatim into dist/ and
+// carry __SITE_URL__ / __CONTACT_EMAIL__ placeholders; fill them from
+// src/constants/site.ts (via the SSR bundle) so the domain lives in one file.
+// Fail the build if a placeholder survives, rather than shipping it.
+for (const name of ["robots.txt", "llms.txt"]) {
+  const file = join(root, "dist", name);
+  const text = (await readFile(file, "utf8"))
+    .replaceAll("__SITE_URL__", SITE_URL)
+    .replaceAll("__CONTACT_EMAIL__", CONTACT_EMAIL);
+  if (/__[A-Z_]+__/.test(text)) {
+    throw new Error(`Unreplaced placeholder left in dist/${name}`);
+  }
+  await writeFile(file, text, "utf8");
+}
+console.log(`filled site constants -> dist/robots.txt, dist/llms.txt`);

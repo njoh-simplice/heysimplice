@@ -1,8 +1,9 @@
-# NSDEV
+# heysimplice
 
 Personal portfolio for **Njoh Simplice Junior** — freelance software developer and
-WordPress/SEO specialist, Yaoundé, Cameroon. Live at **[nsdev.me](https://nsdev.me)**
-(Cloudflare Pages, deploys from `main`).
+WordPress/SEO specialist, Yaoundé, Cameroon. Live at **[heysimplice.com](https://heysimplice.com)**
+(Cloudflare Workers, deploys from `main`; domain and contact email live in
+`src/constants/site.ts`).
 
 Single-page marketing site plus a few routed pages: Home (hero, about, process,
 featured projects, work experience), Projects, Blog, Contact, Legal Mentions, and

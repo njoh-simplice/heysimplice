@@ -4,16 +4,16 @@
 
 ## Pages
 
-- [Home](https://nsdev.me/): Introduction, about, working process, featured projects, work experience.
-- [About](https://nsdev.me/about): Who Njoh Simplice Junior is, specialties, technologies, services, location and contact details.
-- [Projects](https://nsdev.me/projects): Full list of delivered client projects (WordPress sites, web and mobile apps).
-- [Blog](https://nsdev.me/blog): Articles on web development, WordPress and SEO. Each post has its own page at https://nsdev.me/blog/{slug}.
-- [Contact](https://nsdev.me/contact): Contact details and an enquiry form.
-- [Legal Notice](https://nsdev.me/legal-mentions): Site editor, hosting, intellectual property, personal data, cookies.
+- [Home](__SITE_URL__/): Introduction, about, working process, featured projects, work experience.
+- [About](__SITE_URL__/about): Who Njoh Simplice Junior is, specialties, technologies, services, location and contact details.
+- [Projects](__SITE_URL__/projects): Full list of delivered client projects (WordPress sites, web and mobile apps).
+- [Blog](__SITE_URL__/blog): Articles on web development, WordPress and SEO. Each post has its own page at __SITE_URL__/blog/{slug}.
+- [Contact](__SITE_URL__/contact): Contact details and an enquiry form.
+- [Legal Notice](__SITE_URL__/legal-mentions): Site editor, hosting, intellectual property, personal data, cookies.
 
 ## Contact
 
-- Email: contact@nsdev.me
+- Email: __CONTACT_EMAIL__
 - Phone: +237 652 02 59 01
 - Location: Yaoundé, Cameroon
 

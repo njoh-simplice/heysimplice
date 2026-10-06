@@ -1,9 +1,12 @@
+import { CONTACT_EMAIL, SITE_HOST, SITE_URL } from "./site";
+
 export interface PageMeta {
   title: string;
   description: string;
 }
 
-export const SITE_URL = "https://nsdev.me";
+// Re-exported so existing `import { SITE_URL } from "./pageMeta"` call sites keep working.
+export { SITE_URL };
 
 /**
  * Site-wide fallbacks — must match the hard-coded tags in index.html. Blog
@@ -13,7 +16,7 @@ export const SITE_URL = "https://nsdev.me";
  */
 export const SITE_KEYWORDS =
   "Njoh Simplice Junior, software developer, web developer, WordPress developer, SEO specialist, freelance developer, Yaoundé, Cameroon web developer, React developer, Laravel developer, web design, mobile app development";
-export const SITE_OG_IMAGE = "https://nsdev.me/images/logo.gif";
+export const SITE_OG_IMAGE = `${SITE_URL}/images/logo.gif`;
 
 /**
  * Per-route `<title>` / `<meta name="description">`.
@@ -46,12 +49,12 @@ export const PAGE_META = {
   "/contact": {
     title: "Contact | Freelance Web Developer in Yaoundé",
     description:
-      "Get in touch with Njoh Simplice Junior — email contact@nsdev.me, phone +237 652 02 59 01, based in Yaoundé, Cameroon.",
+      `Get in touch with Njoh Simplice Junior — email ${CONTACT_EMAIL}, phone +237 652 02 59 01, based in Yaoundé, Cameroon.`,
   },
   "/legal-mentions": {
     title: "Legal Notice | Njoh Simplice Junior",
     description:
-      "Legal information for nsdev.me: site editor, hosting, intellectual property, personal data and cookies.",
+      `Legal information for ${SITE_HOST}: site editor, hosting, intellectual property, personal data and cookies.`,
   },
   "/404": {
     title: "Page Not Found | Njoh Simplice Junior",

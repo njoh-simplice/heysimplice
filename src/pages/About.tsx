@@ -1,6 +1,7 @@
 import Button from "../components/ui/Button";
 import { LINKEDIN_URL } from "../constants/socials";
 import { SITE_URL } from "../constants/pageMeta";
+import { CONTACT_EMAIL } from "../constants/site";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 /* ------------------------------------------------------------------ */
@@ -154,8 +155,8 @@ export default function About() {
           <ul className={`mt-4 space-y-2 ${bodyClass}`}>
             <li>
               Email:{" "}
-              <a href="mailto:contact@nsdev.me" className={linkClass}>
-                contact@nsdev.me
+              <a href={`mailto:${CONTACT_EMAIL}`} className={linkClass}>
+                {CONTACT_EMAIL}
               </a>
             </li>
             <li>

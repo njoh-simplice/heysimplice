@@ -49,3 +49,4 @@ export {
 // run under plain Node and can't use the `import.meta.glob` inside posts.ts —
 // but they can import it from this Vite-bundled SSR entry.
 export { getAllPosts } from "./features/blog/lib/posts";
+export { CONTACT_EMAIL } from "./constants/site";
