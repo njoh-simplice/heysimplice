@@ -116,7 +116,7 @@ export const projects: Project[] = [
     id: "ambira",
     project_name: "Ambira",
     image: "/images/projects/ambira-light.webp",
-    link: "https://ambira.nsdev.me",
+    link: "https://ambira-light.heysimplice.com/",
     type: "Website",
     description: "Product website.",
     isDisplay: true,
