@@ -4,7 +4,7 @@
  * own, and there is intentionally NO gtag snippet in index.html.
  */
 
-export const GA_MEASUREMENT_ID = "G-6ZMV40EXS4";
+export const GA_MEASUREMENT_ID = "G-P66YYY63HJ";
 
 declare global {
   interface Window {
