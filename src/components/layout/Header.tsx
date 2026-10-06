@@ -83,7 +83,7 @@ export default function Header() {
   return (
     <header className="sticky top-2 z-50 mx-2.5 mt-2 rounded-sm bg-brand-cream">
       <nav className="relative z-50 flex items-center justify-between rounded-sm bg-brand-cream px-3 py-3">
-        <Link to="/" aria-label="NSDEV home" className={focusRing}>
+        <Link to="/" aria-label="Hey Simplice home" className={focusRing}>
           <AnimatedLogo className="w-12 rounded-sm md:w-16" />
         </Link>
 

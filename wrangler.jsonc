@@ -1,8 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  // A new Worker, separate from the old "nsdev" one (which keeps serving
-  // nsdev.me from the old repo until that domain is repurposed). Must match
-  // the Worker name chosen when connecting this repo in Cloudflare.
+  // Must match the Worker name chosen when connecting this repo in Cloudflare.
   "name": "heysimplice",
   "compatibility_date": "2026-09-07",
   "observability": { "enabled": true },

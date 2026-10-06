@@ -5,7 +5,7 @@ export type ConsentChoice = "accepted" | "declined";
 
 /** Shared with the "manage cookie preferences" reset control on the Legal
  *  Mentions page — keep both in sync if this ever changes. */
-export const COOKIE_CONSENT_STORAGE_KEY = "nsdev-cookie-consent";
+export const COOKIE_CONSENT_STORAGE_KEY = "heysimplice-cookie-consent";
 
 function readStoredChoice(): ConsentChoice | null {
   try {

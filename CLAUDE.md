@@ -4,7 +4,7 @@ Guidance for Claude Code when working in this repo. Read this before making chan
 
 ## Project
 
-**NSDEV** — personal portfolio for Njoh Simplice Junior, Software Developer & WordPress/SEO specialist, based in Yaoundé, Cameroon. Single-page (for now) site: hero, about, process ("Working with Me"), featured projects, work experience, footer.
+**heysimplice** — personal portfolio for Njoh Simplice Junior, Software Developer & WordPress/SEO specialist, based in Yaoundé, Cameroon. Single-page (for now) site: hero, about, process ("Working with Me"), featured projects, work experience, footer.
 
 Content source of truth: `src/data/content.ts` (typed content object — see "Content" below).
 Design source of truth: `DESIGN.md` (colors, type, components) — always check it before styling anything.

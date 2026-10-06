@@ -1,6 +1,6 @@
 # DESIGN.md
 
-Design system for the NSDEV portfolio. Colors below were sampled directly (pixel-picked) from the Figma mockup PDF, not estimated — use them exactly. Tailwind tokens matching everything here (colors, fonts, radii) live in `src/index.css` under `@theme`; fonts are self-hosted in `src/assets/fonts/`.
+Design system for the heysimplice portfolio. Colors below were sampled directly (pixel-picked) from the Figma mockup PDF, not estimated — use them exactly. Tailwind tokens matching everything here (colors, fonts, radii) live in `src/index.css` under `@theme`; fonts are self-hosted in `src/assets/fonts/`.
 
 ## Color
 

@@ -45,7 +45,7 @@ export default function AnimatedLogo({ className = "" }: { className?: string })
       <img
         className={className}
         src={showAnimated ? GIF_SRC : (staticFrame ?? GIF_SRC)}
-        alt="NSDEV logo"
+        alt="Njoh Simplice Junior logo"
         width={80}
         height={80}
         onMouseEnter={() => setIsHovering(true)}
