@@ -24,8 +24,10 @@ interface BaseProps {
   loading?: boolean;
   /** Non-interactive + dimmed. Works on both the button and anchor paths. */
   disabled?: boolean;
-  /** Leading icon, rendered before the label. Replaced by the spinner while loading. */
+  /** Icon, rendered before the label by default. Replaced by the spinner while loading. */
   icon?: ReactNode;
+  /** Which side of the label the icon sits on. Default `start`. */
+  iconPosition?: "start" | "end";
   /**
    * Drop the decorative hover/active scale. Colour hover and `focus-visible`
    * states stay — those are functional affordances, not animation. Used on
@@ -110,13 +112,21 @@ function Spinner() {
 
 function Content({
   icon,
+  iconPosition = "start",
   loading,
   children,
 }: {
   icon?: ReactNode;
+  iconPosition?: "start" | "end";
   loading: boolean;
   children: ReactNode;
 }) {
+  const iconNode = icon && !loading && (
+    <span aria-hidden="true" className="inline-flex shrink-0">
+      {icon}
+    </span>
+  );
+
   return (
     <>
       {loading && (
@@ -124,15 +134,12 @@ function Content({
           <Spinner />
         </span>
       )}
-      {icon && !loading && (
-        <span aria-hidden="true" className="inline-flex shrink-0">
-          {icon}
-        </span>
-      )}
+      {iconPosition === "start" && iconNode}
       {/* `invisible` keeps the box (no width jump) but hides it from AT... */}
       <span className={loading ? "invisible" : undefined}>{children}</span>
       {/* ...so re-expose the accessible name while loading. */}
       {loading && <span className="sr-only">{children}</span>}
+      {iconPosition === "end" && iconNode}
     </>
   );
 }
@@ -166,6 +173,7 @@ export default function Button(props: ButtonProps) {
     disabled = false,
     disableMotion = false,
     icon,
+    iconPosition,
     children,
     className,
     to,
@@ -207,7 +215,7 @@ export default function Button(props: ButtonProps) {
           onClick?.(event);
         }}
       >
-        <Content icon={icon} loading={false}>
+        <Content icon={icon} iconPosition={iconPosition} loading={false}>
           {children}
         </Content>
       </Link>
@@ -231,7 +239,7 @@ export default function Button(props: ButtonProps) {
         tabIndex={disabled ? -1 : anchorRest.tabIndex}
         className={rootClass}
       >
-        <Content icon={icon} loading={false}>
+        <Content icon={icon} iconPosition={iconPosition} loading={false}>
           {children}
         </Content>
       </a>
@@ -260,7 +268,7 @@ export default function Button(props: ButtonProps) {
         onClick?.(event);
       }}
     >
-      <Content icon={icon} loading={loading}>
+      <Content icon={icon} iconPosition={iconPosition} loading={loading}>
         {children}
       </Content>
     </button>

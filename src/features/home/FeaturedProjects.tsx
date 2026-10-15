@@ -4,11 +4,12 @@ import ProjectCard from "../projects/ProjectCard";
 import { projects } from "../../data/projectsData/projects";
 
 // Home page teaser: the last 3 live projects (newest, added at the end of the
-// list). The Projects page shows the full list.
+// list), shown newest first. The Projects page shows the full list.
 const HOME_LIMIT = 3;
 const featured = projects
   .filter((project) => project.isDisplay)
-  .slice(-HOME_LIMIT);
+  .slice(-HOME_LIMIT)
+  .reverse();
 
 export default function FeaturedProjects() {
   return (

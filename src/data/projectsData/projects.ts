@@ -85,16 +85,6 @@ export const projects: Project[] = [
     isDisplay: true,
   },
   {
-    id: "le-point-express",
-    project_name: "Le Point Express",
-    image: "/images/projects/le_point_express.webp",
-    link: "https://github.com/njoh-simplice/Livraison-Frontend",
-    type: "Web app",
-    description:
-      "Delivery-management web app with a React front-end and a Laravel back-end.",
-    isDisplay: true,
-  },
-  {
     id: "oeil-sur",
     project_name: "Oeil Sur",
     image: "/images/projects/oeil_sur.webp",
@@ -119,6 +109,24 @@ export const projects: Project[] = [
     link: "https://ambira-light.heysimplice.com/",
     type: "Website",
     description: "Product website.",
+    isDisplay: true,
+  },
+  {
+    id: "nsdev",
+    project_name: "NSDev",
+    image: "/images/projects/nsdev.webp",
+    link: "https://nsdev.me",
+    type: "Website",
+    description: "Small, focused utilities for developers.",
+    isDisplay: true,
+  },
+  {
+    id: "nsdev-ui",
+    project_name: "NSDev UI",
+    image: "/images/projects/nsdev-ui.webp",
+    link: "https://ui.nsdev.me",
+    type: "Component library",
+    description: "A fully styled, token-driven React component library.",
     isDisplay: true,
   },
 ];

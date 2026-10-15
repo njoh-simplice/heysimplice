@@ -49,6 +49,7 @@ const CoffeeButton = ({ className }: { className?: string }) => (
   <Button
     variant="secondary"
     icon={<Coffee className="size-[1.15em]" />}
+    iconPosition="end"
     className={className}
   >
     Buy me a coffee
@@ -82,9 +83,9 @@ export default function Header() {
 
   return (
     <header className="sticky top-2 z-50 mx-2.5 mt-2 rounded-sm bg-brand-cream">
-      <nav className="relative z-50 flex items-center justify-between rounded-sm bg-brand-cream px-3 py-3">
-        <Link to="/" aria-label="Hey Simplice home" className={focusRing}>
-          <AnimatedLogo className="w-12 rounded-sm md:w-16" />
+      <nav className="relative z-50 flex h-20 items-center justify-between rounded-sm bg-brand-cream px-2">
+        <Link to="/" aria-label="Hey Simplice home" className={`flex ${focusRing}`}>
+          <AnimatedLogo className="size-16 rounded-sm" />
         </Link>
 
         {/* Desktop: full nav inline */}
