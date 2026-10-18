@@ -3,6 +3,7 @@ import HighlightText from "../../components/ui/HighlightText";
 import SocialDock from "../../components/ui/SocialDock";
 import lionPhoto from "../../assets/images/njoh-simplice-junior-lion-statue-cameroon.webp";
 import hikingPhoto from "../../assets/images/njoh-simplice-junior-hiking-trail-cameroon.webp";
+import citsPhoto from "../../assets/images/njoh-simplice-junior-cits-2026-yaounde.webp";
 import sparkle from "../../assets/images/sparkle-accent.webp";
 import heroBg from "../../assets/images/hero-background.png";
 
@@ -10,6 +11,9 @@ const HIKING_ALT =
   "Njoh Simplice Junior hiking on a rocky trail overlooking a lush green valley in Cameroon";
 const LION_ALT =
   "Njoh Simplice Junior standing arms outstretched in front of a monumental lion statue in Cameroon";
+
+const CITS_ALT =
+  "Njoh Simplice Junior wearing a student pass lanyard at the Cameroon International Tech Summit (CITS) 2026, standing in front of the event's programme screen";
 
 const frameClass =
   "shrink-0 rounded-card bg-brand-cream p-1.5 shadow-xl transition duration-500 hover:scale-105";
@@ -102,18 +106,15 @@ export default function Hero() {
           />
         </div>
 
-        {/* Right card — TODO: replace with a real third photo. For now the hiking
-            shot mirrored; decorative (alt="") since it repeats an image already
-            described on the left card. */}
+        {/* Right card */}
         <div
           className={`${frameClass} group z-10 -ml-[12%] w-[40%] origin-top rotate-6 hover:z-30 md:-ml-[3%] md:w-[32%] md:rotate-[9deg]`}
         >
           <img
-            src={hikingPhoto}
-            alt=""
-            aria-hidden="true"
+            src={citsPhoto}
+            alt={CITS_ALT}
             loading="lazy"
-            className={`${photoClass} -scale-x-100`}
+            className={photoClass}
           />
         </div>
       </div>
