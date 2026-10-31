@@ -129,4 +129,14 @@ export const projects: Project[] = [
     description: "A fully styled, token-driven React component library.",
     isDisplay: true,
   },
+  {
+    id: "ns-agency",
+    project_name: "NSAGENCY",
+    image: "/images/projects/ns-agency.webp",
+    link: "https://ns-agency.heysimplice.com",
+    type: "Website",
+    description:
+      "Website for a software, communication and consulting agency in Yaoundé.",
+    isDisplay: true,
+  },
 ];
