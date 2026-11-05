@@ -139,4 +139,13 @@ export const projects: Project[] = [
       "Website for a software, communication and consulting agency in Yaoundé.",
     isDisplay: true,
   },
+  {
+    id: "ns-trip",
+    project_name: "NS Trip",
+    image: "/images/projects/ns-trip.webp",
+    link: "https://ns-trip.heysimplice.com",
+    type: "Website",
+    description: "Travel website for guided journeys through Cameroon.",
+    isDisplay: true,
+  },
 ];
