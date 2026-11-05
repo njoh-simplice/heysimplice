@@ -16,7 +16,7 @@ const SPECIALTIES = [
   {
     term: "Mobile Development",
     detail:
-      "React.js front-ends with Laravel back-ends, including real-time features like GPS tracking",
+      "React Native apps and React.js front-ends with Laravel back-ends, including real-time features like GPS tracking",
   },
   {
     term: "Web Design",
@@ -30,20 +30,25 @@ const SPECIALTIES = [
 ];
 
 const TECHNOLOGIES = [
+  "React.js",
+  "Next.js",
+  "React Native",
+  "TypeScript",
+  "JavaScript",
+  "HTML5",
+  "CSS3",
+  "GSAP",
+  "Lenis",
+  "PHP",
+  "Laravel",
+  "MySQL",
   "WordPress",
   "Elementor Pro",
   "ACF",
-  "HTML5",
-  "CSS3",
-  "JavaScript",
-  "PHP",
-  "React",
-  "TypeScript",
-  "Laravel",
-  "MySQL",
   "Figma",
   "Framer",
   "Git/GitHub",
+  "Claude",
   "Google Analytics 4",
 ];
 
